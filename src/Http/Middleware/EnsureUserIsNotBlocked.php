@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 class EnsureUserIsNotBlocked
 {
-    public function handle(Request $request, Closure $next): \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse|\Illuminate\Http\JsonResponse
+    public function handle(Request $request, Closure $next): mixed
     {
         if (Auth::user()?->isBlocked()) {
             session()->flush();
