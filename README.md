@@ -21,6 +21,11 @@ Add EnsureUserIsNotBlocked middleware to middleware array in *app/Http/Kernel.ph
     ];
 ```
 
+Run migrations:
+```php
+php artisan migrate
+```
+
 # Publishing
 ### Migrations
 ```php
