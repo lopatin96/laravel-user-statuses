@@ -1,14 +1,17 @@
 # Install
-### Trait
-Add **HasUserStatus** trait to User model
+### Trait and Casts
+Add ```HasUserStatus``` trait and casts to User model.
 
 ```php
-
 use Atin\LaravelSocialAuth\Traits\HasUserStatus;
 
 class User extends Authenticatable
 {
-    use HasUserStatus, …
+    use HasUserStatus;
+
+    protected $casts = [
+        'status' => \Atin\LaravelUserStatuses\Enums\UserStatus::class,
+    ];
 ```
 
 Add EnsureUserIsNotBlocked middleware to middleware array in *app/Http/Kernel.php*:
